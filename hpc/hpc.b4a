@@ -1,0 +1,106 @@
+﻿Build1=Default,b4a.example
+File1=data.csv
+File2=Layout.bal
+File3=Layout2.bal
+File4=xgb_model.json
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+Group=Default Group
+Library1=core
+Library2=phone
+Library3=stringutils
+Library4=json
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Plot
+Module2=SHAP
+Module3=XGBoost
+NumberOfFiles=4
+NumberOfLibraries=4
+NumberOfModules=3
+Version=13.3
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: B4A Example
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+	Dim SHAP1() As Double
+	Dim pw1 As PhoneWakeState
+	
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Dim lbl(13) As Label
+	Dim et(13) As EditText
+	Dim Button1 As Button
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	Dim headers() As String=Array As String("Cement", "Blast Furnace Slag", "Fly Ash", "Water", "Superplasticizer", "Coarse Aggregate", "Fine Aggregate", "Age", "NumBackground")
+	Dim firstRow() As String=Array As String(139.6,209.4,0,192,0,1047,806.9,3, 1000)
+	For i=0 To 8
+		lbl(i).Initialize("")
+		Activity.AddView(lbl(i), 0%x, i*9%y+5%y, 50%x, 10%y)
+		lbl(i).Text= headers(i)
+		lbl(i).Gravity=Gravity.CENTER
+		lbl(i).TextSize=20
+		et(i).Initialize("")
+		Activity.AddView(et(i), 50%x, i*9%y+5%y, 20%x, 10%y)
+		et(i).Text= firstRow(i)
+		et(i).Gravity=Gravity.CENTER
+		et(i).TextSize=20
+	Next
+	Button1.Top=9*9%y+5%y
+	Button1.Width=100%x
+	Button1.Text="Predict & Interpret"
+	Button1.Left=0
+	Button1.Height=10%y
+		
+	XGBoost.LoadModel(File.DirAssets, "xgb_model.json")
+	SHAP.LoadData("data.csv")
+	
+	pw1.KeepAlive(True)
+End Sub
+
+
+Sub Button1_Click
+	Dim x(8) As Double
+	For i=0 To 7
+		x(i) = et(i).Text
+	Next
+		
+	Dim m As Map
+	m.Initialize
+	Dim SHAP1() As Double
+	Dim t1 As Double = DateTime.Now
+	m = SHAP.ExplainPrediction(x, et(8).Text)
+	Log(DateTime.Now - t1)
+	Dim SHAP1() As Double=m.Get("shap_values")
+	For i = 0 To 7
+		Log("Feature " & i & _
+	        " SHAP = " & SHAP1(i))
+	Next
+	Log("Base Value = " & m.Get("base_value"))
+	Log("Prediction = " & m.Get("prediction"))
+	Log("Sum SHAP = " & m.Get("sum_prediction"))
+	Log(XGBoost.n)
+	StartActivity(Plot)
+End Sub
+

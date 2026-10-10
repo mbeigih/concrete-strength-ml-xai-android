@@ -1,0 +1,15 @@
+﻿ModuleBookmarks0=
+ModuleBookmarks1=
+ModuleBookmarks2=
+ModuleBookmarks3=
+ModuleBreakpoints0=
+ModuleBreakpoints1=
+ModuleBreakpoints2=
+ModuleBreakpoints3=
+ModuleClosedNodes0=
+ModuleClosedNodes1=
+ModuleClosedNodes2=
+ModuleClosedNodes3=
+NavigationStack=Main,Process_Globals,17,0,XGBoost,Predict,62,2,Plot,Activity_Create,24,6,SHAP,CalculateSHAP,53,0,XGBoost,Process_Globals,6,4,SHAP,ExplainPrediction,138,0,SHAP,Process_Globals,4,0,SHAP,Factorial,372,0,Main,Button1_Click,68,5,Main,Activity_Create,53,6
+SelectedBuild=0
+VisibleModules=3,1,2
