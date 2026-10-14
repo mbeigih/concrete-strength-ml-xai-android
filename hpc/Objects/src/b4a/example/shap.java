@@ -43,7 +43,7 @@ _result.Initialize();
  //BA.debugLineNum = 96;BA.debugLine="If BackgroundData.Size = 0 Then";
 if (_backgrounddata.getSize()==0) { 
  //BA.debugLineNum = 97;BA.debugLine="Log(\"Background data is empty.\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("2917510","Background data is empty.",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("21048582","Background data is empty.",0);
  //BA.debugLineNum = 98;BA.debugLine="Return Result";
 if (true) return _result;
  };
@@ -294,7 +294,7 @@ anywheresoftware.b4a.keywords.Common.File.Copy(anywheresoftware.b4a.keywords.Com
  //BA.debugLineNum = 42;BA.debugLine="If File.Exists(File.DirInternal, FileName) = Fals";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename)==anywheresoftware.b4a.keywords.Common.False) { 
  //BA.debugLineNum = 43;BA.debugLine="Log(\"Background file not found: \" & FileName)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21310725","Background file not found: "+_filename,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("2983045","Background file not found: "+_filename,0);
  //BA.debugLineNum = 44;BA.debugLine="Return";
 if (true) return "";
  };
@@ -339,7 +339,7 @@ _backgrounddata.Add((Object)(_x));
  }
 };
  //BA.debugLineNum = 75;BA.debugLine="Log(\"Background samples loaded: \" & BackgroundDat";
-anywheresoftware.b4a.keywords.Common.LogImpl("21310757","Background samples loaded: "+BA.NumberToString(_backgrounddata.getSize()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("2983077","Background samples loaded: "+BA.NumberToString(_backgrounddata.getSize()),0);
  //BA.debugLineNum = 77;BA.debugLine="End Sub";
 return "";
 }
