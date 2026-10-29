@@ -10,6 +10,6 @@ ModuleClosedNodes0=
 ModuleClosedNodes1=
 ModuleClosedNodes2=
 ModuleClosedNodes3=
-NavigationStack=Main,Process_Globals,17,0,XGBoost,Predict,62,2,Plot,Activity_Create,24,6,SHAP,CalculateSHAP,53,0,XGBoost,Process_Globals,6,4,SHAP,ExplainPrediction,138,0,SHAP,Process_Globals,4,0,SHAP,Factorial,372,0,Main,Button1_Click,68,5,Main,Activity_Create,32,6
+NavigationStack=XGBoost,Process_Globals,6,4,SHAP,ExplainPrediction,138,0,SHAP,Factorial,372,0,Plot,Process_Globals,7,0,Main,Activity_Create,32,6,Main,Process_Globals,19,4,SHAP,Process_Globals,14,0,Main,Button1_Click,73,6,Plot,Activity_Create,30,6,SHAP,CalculateSHAP,114,0
 SelectedBuild=0
 VisibleModules=3,1,2

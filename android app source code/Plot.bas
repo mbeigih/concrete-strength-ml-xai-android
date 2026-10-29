@@ -34,7 +34,7 @@ Sub Activity_Create(FirstTime As Boolean)
 '    baseValue As Double, _
 '    featureNames() As String)
 	featureNames= Array As String("C", "BFS", "FA", "W", "SP", "CA", "FAg", "Age")
-	baseValue = 37.844437430216566
+	baseValue = Main.bs
 
 	SHAP2=Main.SHAP1
 	pnl.RemoveAllViews

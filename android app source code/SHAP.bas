@@ -18,7 +18,6 @@ Sub Process_Globals
 	Private BackgroundData As List
 
 	Private Const NUM_FEATURES As Int = 8
-	Private Const NUM_COALITIONS As Int = 256
 
 End Sub
 

@@ -337,6 +337,7 @@ public class main extends Activity implements B4AActivity{
 
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static double[] _shap1 = null;
+public static double _bs = 0;
 public static anywheresoftware.b4a.phone.Phone.PhoneWakeState _pw1 = null;
 public anywheresoftware.b4a.objects.LabelWrapper[] _lbl = null;
 public anywheresoftware.b4a.objects.EditTextWrapper[] _et = null;
@@ -354,58 +355,58 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 String[] _headers = null;
 String[] _firstrow = null;
 int _i = 0;
- //BA.debugLineNum = 31;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 32;BA.debugLine="Activity.LoadLayout(\"Layout\")";
+ //BA.debugLineNum = 32;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 33;BA.debugLine="Activity.LoadLayout(\"Layout\")";
 mostCurrent._activity.LoadLayout("Layout",mostCurrent.activityBA);
- //BA.debugLineNum = 33;BA.debugLine="Dim headers() As String=Array As String(\"Cement\",";
+ //BA.debugLineNum = 34;BA.debugLine="Dim headers() As String=Array As String(\"Cement\",";
 _headers = new String[]{"Cement","Blast Furnace Slag","Fly Ash","Water","Superplasticizer","Coarse Aggregate","Fine Aggregate","Age","NumBackground"};
- //BA.debugLineNum = 34;BA.debugLine="Dim firstRow() As String=Array As String(139.6,20";
+ //BA.debugLineNum = 35;BA.debugLine="Dim firstRow() As String=Array As String(139.6,20";
 _firstrow = new String[]{BA.NumberToString(139.6),BA.NumberToString(209.4),BA.NumberToString(0),BA.NumberToString(192),BA.NumberToString(0),BA.NumberToString(1047),BA.NumberToString(806.9),BA.NumberToString(3),BA.NumberToString(1000)};
- //BA.debugLineNum = 35;BA.debugLine="For i=0 To 8";
+ //BA.debugLineNum = 36;BA.debugLine="For i=0 To 8";
 {
 final int step4 = 1;
 final int limit4 = (int) (8);
 _i = (int) (0) ;
 for (;_i <= limit4 ;_i = _i + step4 ) {
- //BA.debugLineNum = 36;BA.debugLine="lbl(i).Initialize(\"\")";
+ //BA.debugLineNum = 37;BA.debugLine="lbl(i).Initialize(\"\")";
 mostCurrent._lbl[_i].Initialize(mostCurrent.activityBA,"");
- //BA.debugLineNum = 37;BA.debugLine="Activity.AddView(lbl(i), 0%x, i*9%y+5%y, 50%x, 1";
+ //BA.debugLineNum = 38;BA.debugLine="Activity.AddView(lbl(i), 0%x, i*9%y+5%y, 50%x, 1";
 mostCurrent._activity.AddView((android.view.View)(mostCurrent._lbl[_i].getObject()),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA),(int) (_i*anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (9),mostCurrent.activityBA)+anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA)),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (50),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (10),mostCurrent.activityBA));
- //BA.debugLineNum = 38;BA.debugLine="lbl(i).Text= headers(i)";
+ //BA.debugLineNum = 39;BA.debugLine="lbl(i).Text= headers(i)";
 mostCurrent._lbl[_i].setText(BA.ObjectToCharSequence(_headers[_i]));
- //BA.debugLineNum = 39;BA.debugLine="lbl(i).Gravity=Gravity.CENTER";
+ //BA.debugLineNum = 40;BA.debugLine="lbl(i).Gravity=Gravity.CENTER";
 mostCurrent._lbl[_i].setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER);
- //BA.debugLineNum = 40;BA.debugLine="lbl(i).TextSize=20";
+ //BA.debugLineNum = 41;BA.debugLine="lbl(i).TextSize=20";
 mostCurrent._lbl[_i].setTextSize((float) (20));
- //BA.debugLineNum = 41;BA.debugLine="et(i).Initialize(\"\")";
+ //BA.debugLineNum = 42;BA.debugLine="et(i).Initialize(\"\")";
 mostCurrent._et[_i].Initialize(mostCurrent.activityBA,"");
- //BA.debugLineNum = 42;BA.debugLine="Activity.AddView(et(i), 50%x, i*9%y+5%y, 20%x, 1";
+ //BA.debugLineNum = 43;BA.debugLine="Activity.AddView(et(i), 50%x, i*9%y+5%y, 20%x, 1";
 mostCurrent._activity.AddView((android.view.View)(mostCurrent._et[_i].getObject()),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (50),mostCurrent.activityBA),(int) (_i*anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (9),mostCurrent.activityBA)+anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA)),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (20),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (10),mostCurrent.activityBA));
- //BA.debugLineNum = 43;BA.debugLine="et(i).Text= firstRow(i)";
+ //BA.debugLineNum = 44;BA.debugLine="et(i).Text= firstRow(i)";
 mostCurrent._et[_i].setText(BA.ObjectToCharSequence(_firstrow[_i]));
- //BA.debugLineNum = 44;BA.debugLine="et(i).Gravity=Gravity.CENTER";
+ //BA.debugLineNum = 45;BA.debugLine="et(i).Gravity=Gravity.CENTER";
 mostCurrent._et[_i].setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER);
- //BA.debugLineNum = 45;BA.debugLine="et(i).TextSize=20";
+ //BA.debugLineNum = 46;BA.debugLine="et(i).TextSize=20";
 mostCurrent._et[_i].setTextSize((float) (20));
  }
 };
- //BA.debugLineNum = 47;BA.debugLine="Button1.Top=9*9%y+5%y";
+ //BA.debugLineNum = 48;BA.debugLine="Button1.Top=9*9%y+5%y";
 mostCurrent._button1.setTop((int) (9*anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (9),mostCurrent.activityBA)+anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA)));
- //BA.debugLineNum = 48;BA.debugLine="Button1.Width=100%x";
+ //BA.debugLineNum = 49;BA.debugLine="Button1.Width=100%x";
 mostCurrent._button1.setWidth(anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA));
- //BA.debugLineNum = 49;BA.debugLine="Button1.Text=\"Predict & Interpret\"";
+ //BA.debugLineNum = 50;BA.debugLine="Button1.Text=\"Predict & Interpret\"";
 mostCurrent._button1.setText(BA.ObjectToCharSequence("Predict & Interpret"));
- //BA.debugLineNum = 50;BA.debugLine="Button1.Left=0";
+ //BA.debugLineNum = 51;BA.debugLine="Button1.Left=0";
 mostCurrent._button1.setLeft((int) (0));
- //BA.debugLineNum = 51;BA.debugLine="Button1.Height=10%y";
+ //BA.debugLineNum = 52;BA.debugLine="Button1.Height=10%y";
 mostCurrent._button1.setHeight(anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (10),mostCurrent.activityBA));
- //BA.debugLineNum = 53;BA.debugLine="XGBoost.LoadModel(File.DirAssets, \"xgb_model.json";
+ //BA.debugLineNum = 54;BA.debugLine="XGBoost.LoadModel(File.DirAssets, \"xgb_model.json";
 mostCurrent._xgboost._loadmodel /*String*/ (mostCurrent.activityBA,anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"xgb_model.json");
- //BA.debugLineNum = 54;BA.debugLine="SHAP.LoadData(\"data.csv\")";
+ //BA.debugLineNum = 55;BA.debugLine="SHAP.LoadData(\"data.csv\")";
 mostCurrent._shap._loaddata /*String*/ (mostCurrent.activityBA,"data.csv");
- //BA.debugLineNum = 56;BA.debugLine="pw1.KeepAlive(True)";
+ //BA.debugLineNum = 57;BA.debugLine="pw1.KeepAlive(True)";
 _pw1.KeepAlive(processBA,anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 57;BA.debugLine="End Sub";
+ //BA.debugLineNum = 58;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{
@@ -413,61 +414,63 @@ double[] _x = null;
 int _i = 0;
 anywheresoftware.b4a.objects.collections.Map _m = null;
 double _t1 = 0;
- //BA.debugLineNum = 60;BA.debugLine="Sub Button1_Click";
- //BA.debugLineNum = 61;BA.debugLine="Dim x(8) As Double";
+ //BA.debugLineNum = 61;BA.debugLine="Sub Button1_Click";
+ //BA.debugLineNum = 62;BA.debugLine="Dim x(8) As Double";
 _x = new double[(int) (8)];
 ;
- //BA.debugLineNum = 62;BA.debugLine="For i=0 To 7";
+ //BA.debugLineNum = 63;BA.debugLine="For i=0 To 7";
 {
 final int step2 = 1;
 final int limit2 = (int) (7);
 _i = (int) (0) ;
 for (;_i <= limit2 ;_i = _i + step2 ) {
- //BA.debugLineNum = 63;BA.debugLine="x(i) = et(i).Text";
+ //BA.debugLineNum = 64;BA.debugLine="x(i) = et(i).Text";
 _x[_i] = (double)(Double.parseDouble(mostCurrent._et[_i].getText()));
  }
 };
- //BA.debugLineNum = 66;BA.debugLine="Dim m As Map";
+ //BA.debugLineNum = 67;BA.debugLine="Dim m As Map";
 _m = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 67;BA.debugLine="m.Initialize";
+ //BA.debugLineNum = 68;BA.debugLine="m.Initialize";
 _m.Initialize();
- //BA.debugLineNum = 68;BA.debugLine="Dim SHAP1() As Double";
+ //BA.debugLineNum = 69;BA.debugLine="Dim SHAP1() As Double";
 _shap1 = new double[(int) (0)];
 ;
- //BA.debugLineNum = 69;BA.debugLine="Dim t1 As Double = DateTime.Now";
+ //BA.debugLineNum = 70;BA.debugLine="Dim t1 As Double = DateTime.Now";
 _t1 = anywheresoftware.b4a.keywords.Common.DateTime.getNow();
- //BA.debugLineNum = 70;BA.debugLine="m = SHAP.ExplainPrediction(x, et(8).Text)";
+ //BA.debugLineNum = 71;BA.debugLine="m = SHAP.ExplainPrediction(x, et(8).Text)";
 _m = mostCurrent._shap._explainprediction /*anywheresoftware.b4a.objects.collections.Map*/ (mostCurrent.activityBA,_x,(int)(Double.parseDouble(mostCurrent._et[(int) (8)].getText())));
- //BA.debugLineNum = 71;BA.debugLine="Log(DateTime.Now - t1)";
-anywheresoftware.b4a.keywords.Common.LogImpl("2196619",BA.NumberToString(anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_t1),0);
- //BA.debugLineNum = 72;BA.debugLine="Dim SHAP1() As Double=m.Get(\"shap_values\")";
+ //BA.debugLineNum = 72;BA.debugLine="Log(DateTime.Now - t1)";
+anywheresoftware.b4a.keywords.Common.LogImpl("3196619",BA.NumberToString(anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_t1),0);
+ //BA.debugLineNum = 73;BA.debugLine="Dim SHAP1() As Double=m.Get(\"shap_values\")";
 _shap1 = (double[])(_m.Get((Object)("shap_values")));
- //BA.debugLineNum = 73;BA.debugLine="For i = 0 To 7";
+ //BA.debugLineNum = 74;BA.debugLine="Dim bs As Double=m.Get(\"base_value\")";
+_bs = (double)(BA.ObjectToNumber(_m.Get((Object)("base_value"))));
+ //BA.debugLineNum = 75;BA.debugLine="For i = 0 To 7";
 {
-final int step12 = 1;
-final int limit12 = (int) (7);
+final int step13 = 1;
+final int limit13 = (int) (7);
 _i = (int) (0) ;
-for (;_i <= limit12 ;_i = _i + step12 ) {
- //BA.debugLineNum = 74;BA.debugLine="Log(\"Feature \" & i & _ 	        \" SHAP = \" & SHA";
-anywheresoftware.b4a.keywords.Common.LogImpl("2196622","Feature "+BA.NumberToString(_i)+" SHAP = "+BA.NumberToString(_shap1[_i]),0);
+for (;_i <= limit13 ;_i = _i + step13 ) {
+ //BA.debugLineNum = 76;BA.debugLine="Log(\"Feature \" & i & _ 	        \" SHAP = \" & SHA";
+anywheresoftware.b4a.keywords.Common.LogImpl("3196623","Feature "+BA.NumberToString(_i)+" SHAP = "+BA.NumberToString(_shap1[_i]),0);
  }
 };
- //BA.debugLineNum = 77;BA.debugLine="Log(\"Base Value = \" & m.Get(\"base_value\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("2196625","Base Value = "+BA.ObjectToString(_m.Get((Object)("base_value"))),0);
- //BA.debugLineNum = 78;BA.debugLine="Log(\"Prediction = \" & m.Get(\"prediction\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("2196626","Prediction = "+BA.ObjectToString(_m.Get((Object)("prediction"))),0);
- //BA.debugLineNum = 79;BA.debugLine="Log(\"Sum SHAP = \" & m.Get(\"sum_prediction\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("2196627","Sum SHAP = "+BA.ObjectToString(_m.Get((Object)("sum_prediction"))),0);
- //BA.debugLineNum = 80;BA.debugLine="Log(XGBoost.n)";
-anywheresoftware.b4a.keywords.Common.LogImpl("2196628",BA.NumberToString(mostCurrent._xgboost._n /*double*/ ),0);
- //BA.debugLineNum = 81;BA.debugLine="StartActivity(Plot)";
+ //BA.debugLineNum = 79;BA.debugLine="Log(\"Base Value = \" & m.Get(\"base_value\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("3196626","Base Value = "+BA.ObjectToString(_m.Get((Object)("base_value"))),0);
+ //BA.debugLineNum = 80;BA.debugLine="Log(\"Prediction = \" & m.Get(\"prediction\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("3196627","Prediction = "+BA.ObjectToString(_m.Get((Object)("prediction"))),0);
+ //BA.debugLineNum = 81;BA.debugLine="Log(\"Sum SHAP = \" & m.Get(\"sum_prediction\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("3196628","Sum SHAP = "+BA.ObjectToString(_m.Get((Object)("sum_prediction"))),0);
+ //BA.debugLineNum = 82;BA.debugLine="Log(XGBoost.n)";
+anywheresoftware.b4a.keywords.Common.LogImpl("3196629",BA.NumberToString(mostCurrent._xgboost._n /*double*/ ),0);
+ //BA.debugLineNum = 83;BA.debugLine="StartActivity(Plot)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._plot.getObject()));
- //BA.debugLineNum = 82;BA.debugLine="End Sub";
+ //BA.debugLineNum = 84;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 24;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 26;BA.debugLine="Dim lbl(13) As Label";
+ //BA.debugLineNum = 25;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 27;BA.debugLine="Dim lbl(13) As Label";
 mostCurrent._lbl = new anywheresoftware.b4a.objects.LabelWrapper[(int) (13)];
 {
 int d0 = mostCurrent._lbl.length;
@@ -476,7 +479,7 @@ mostCurrent._lbl[i0] = new anywheresoftware.b4a.objects.LabelWrapper();
 }
 }
 ;
- //BA.debugLineNum = 27;BA.debugLine="Dim et(13) As EditText";
+ //BA.debugLineNum = 28;BA.debugLine="Dim et(13) As EditText";
 mostCurrent._et = new anywheresoftware.b4a.objects.EditTextWrapper[(int) (13)];
 {
 int d0 = mostCurrent._et.length;
@@ -485,9 +488,9 @@ mostCurrent._et[i0] = new anywheresoftware.b4a.objects.EditTextWrapper();
 }
 }
 ;
- //BA.debugLineNum = 28;BA.debugLine="Dim Button1 As Button";
+ //BA.debugLineNum = 29;BA.debugLine="Dim Button1 As Button";
 mostCurrent._button1 = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 29;BA.debugLine="End Sub";
+ //BA.debugLineNum = 30;BA.debugLine="End Sub";
 return "";
 }
 
@@ -510,9 +513,11 @@ shap._process_globals();
  //BA.debugLineNum = 19;BA.debugLine="Dim SHAP1() As Double";
 _shap1 = new double[(int) (0)];
 ;
- //BA.debugLineNum = 20;BA.debugLine="Dim pw1 As PhoneWakeState";
+ //BA.debugLineNum = 20;BA.debugLine="Dim bs As Double";
+_bs = 0;
+ //BA.debugLineNum = 21;BA.debugLine="Dim pw1 As PhoneWakeState";
 _pw1 = new anywheresoftware.b4a.phone.Phone.PhoneWakeState();
- //BA.debugLineNum = 22;BA.debugLine="End Sub";
+ //BA.debugLineNum = 23;BA.debugLine="End Sub";
 return "";
 }
 }

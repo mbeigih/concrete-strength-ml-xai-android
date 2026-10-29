@@ -9,15 +9,14 @@ FileGroup3=Default Group
 FileGroup4=Default Group
 Group=Default Group
 Library1=core
-Library2=phone
-Library3=stringutils
-Library4=json
+Library2=json
+Library3=phone
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Plot
 Module2=SHAP
 Module3=XGBoost
 NumberOfFiles=4
-NumberOfLibraries=4
+NumberOfLibraries=3
 NumberOfModules=3
 Version=13.3
 @EndOfDesignText@
@@ -40,6 +39,7 @@ Sub Process_Globals
 	'These variables can be accessed from all modules.
 
 	Dim SHAP1() As Double
+	Dim bs As Double
 	Dim pw1 As PhoneWakeState
 	
 End Sub
@@ -93,6 +93,7 @@ Sub Button1_Click
 	m = SHAP.ExplainPrediction(x, et(8).Text)
 	Log(DateTime.Now - t1)
 	Dim SHAP1() As Double=m.Get("shap_values")
+	Dim bs As Double=m.Get("base_value")
 	For i = 0 To 7
 		Log("Feature " & i & _
 	        " SHAP = " & SHAP1(i))
